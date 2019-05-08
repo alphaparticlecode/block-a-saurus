@@ -31,17 +31,17 @@ function bas_editor_assets() {
 	// Scripts.
 	wp_enqueue_script(
 		'bas-basic-script', // Handle.
-		plugins_url( 'block.build.js', __FILE__ ),
+		plugins_url( 'dist/block.build.js', __FILE__ ),
 		array( 'wp-blocks', 'wp-i18n', 'wp-element' ),
-		filemtime( plugin_dir_path( __FILE__ ) . 'block.js' )
+		filemtime( plugin_dir_path( __FILE__ ) . 'src/js/block.js' )
 	);
 
 	// Styles.
 	wp_enqueue_style(
 		'bas-basic-styles', // Handle.
-		plugins_url( 'editor.css', __FILE__ ),
+		plugins_url( 'src/css/editor.css', __FILE__ ),
 		array( 'wp-edit-blocks' ),
-		filemtime( plugin_dir_path( __FILE__ ) . 'editor.css' )
+		filemtime( plugin_dir_path( __FILE__ ) . 'src/css/editor.css' )
 	);
 }
 
@@ -54,8 +54,8 @@ function bas_frontend_assets() {
 	// Styles.
 	wp_enqueue_style(
 		'bas-basic-frontend', // Handle.
-		plugins_url( 'style.css', __FILE__ ),
+		plugins_url( 'src/css/style.css', __FILE__ ),
 		array( 'wp-blocks' ),
-		filemtime( plugin_dir_path( __FILE__ ) . 'editor.css' )
+		filemtime( plugin_dir_path( __FILE__ ) . 'src/css/style.css' )
 	);
 }

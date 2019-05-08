@@ -16,7 +16,7 @@ registerBlockType( 'blockasaurus/blockasaurus', {
 	category: 'common',
 	edit() {
 		return (
-			<img src="/wp-content/plugins/block-a-saurus/dino-cover.png" alt="" />
+			<img src="/wp-content/plugins/block-a-saurus/src/img/dino-cover.png" alt="" />
 		);
 	},
 	save() {
