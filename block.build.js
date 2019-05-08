@@ -85,11 +85,7 @@ registerBlockType('blockasaurus/blockasaurus', {
 	icon: wp.element.createElement(Icon, null),
 	category: 'common',
 	edit: function edit() {
-		return wp.element.createElement(
-			"p",
-			null,
-			"Block-a-saurus block goes here."
-		);
+		return wp.element.createElement("img", { src: "/wp-content/plugins/block-a-saurus/dino-cover.png", alt: "" });
 	},
 	save: function save() {
 		return wp.element.createElement(

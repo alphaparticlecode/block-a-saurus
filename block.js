@@ -16,7 +16,7 @@ registerBlockType( 'blockasaurus/blockasaurus', {
 	category: 'common',
 	edit() {
 		return (
-			<p>Block-a-saurus block goes here.</p>
+			<img src="/wp-content/plugins/block-a-saurus/dino-cover.png" alt="" />
 		);
 	},
 	save() {
