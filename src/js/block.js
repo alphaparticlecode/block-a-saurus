@@ -1,6 +1,8 @@
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 
+import Game from './Game';
+
 function Icon () {
     return (
     	<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 750 750" width="750.0pt" height="750.0pt">
@@ -21,7 +23,7 @@ registerBlockType( 'blockasaurus/blockasaurus', {
 	},
 	save() {
 		return (
-			<p>Block-a-saurus block goes here.</p>
+			<Game />
 		);
 	},
 } );
