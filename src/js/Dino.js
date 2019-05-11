@@ -685,6 +685,8 @@
                         this.playSound(this.soundFx.BUTTON_PRESS);
                         this.tRex.startJump(this.currentSpeed);
                     }
+
+                    e.preventDefault();
                 }
 
                 if (this.crashed && e.type == Runner.events.TOUCHSTART &&
@@ -2709,7 +2711,6 @@
 
 
 function onDocumentLoad() {
-    console.log('here');
     new Runner('.interstitial-wrapper');
 }
 
