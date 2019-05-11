@@ -55,7 +55,14 @@ function bas_frontend_assets() {
 	wp_enqueue_style(
 		'bas-basic-frontend', // Handle.
 		plugins_url( 'src/css/style.css', __FILE__ ),
-		array( 'wp-blocks' ),
+		array(),
 		filemtime( plugin_dir_path( __FILE__ ) . 'src/css/style.css' )
+	);
+
+	wp_enqueue_script(
+		'bas-dino-frontend', // Handle.
+		plugins_url( 'dist/dino.build.js', __FILE__ ),
+		array( 'jquery' ),
+		filemtime( plugin_dir_path( __FILE__ ) . 'dist/dino.build.js' )
 	);
 }

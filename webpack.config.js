@@ -1,9 +1,12 @@
 module.exports = {
-	entry: './src/js/block.js',
+	entry: {
+    	block: './src/js/block.js',
+    	dino: './src/js/Dino.js'
+  	},
 	output: {
-		path: __dirname,
-		filename: 'dist/block.build.js',
-	},
+    	filename: '[name].build.js',
+    	path: __dirname + '/dist'
+  	},
 	module: {
 		loaders: [
 			{
