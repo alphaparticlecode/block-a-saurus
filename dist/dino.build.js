@@ -733,13 +733,14 @@
      * @param {Event} e
      */
     onKeyDown: function onKeyDown(e) {
-      // Prevent native page scrolling whilst tapping on mobile.
+      console.log(Runner.keycodes.JUMP[e.keyCode]); // Prevent native page scrolling whilst tapping on mobile.
+
       if (IS_MOBILE && this.playing) {
         e.preventDefault();
       }
 
       if (e.target != this.detailsButton) {
-        if (!this.crashed && (Runner.keycodes.JUMP[e.keyCode] || e.type == Runner.events.TOUCHSTART)) {
+        if (!this.crashed && (Runner.keycodes.JUMP[e.keyCode] || e.type == Runner.events.TOUCHSTART || e.type == Runner.events.MOUSEDOWN)) {
           if (!this.playing) {
             document.querySelector('#messageBox').style.visibility = 'hidden';
             this.loadSounds();
