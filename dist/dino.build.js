@@ -742,7 +742,11 @@
         if (!this.crashed && (e.type == Runner.events.TOUCHSTART || e.type == Runner.events.MOUSEDOWN)) {
           if (!this.playing) {
             document.querySelector('#messageBox').style.visibility = 'hidden';
-            this.loadSounds();
+
+            if (!this.config.MUTE_AUDIO) {
+              this.loadSounds();
+            }
+
             this.playing = true;
             this.update();
 
@@ -2568,7 +2572,31 @@
 })();
 
 function onDocumentLoad() {
-  new Runner('.interstitial-wrapper');
+  var runnerConfig = {
+    ACCELERATION: 0.001,
+    BG_CLOUD_SPEED: 0.2,
+    BOTTOM_PAD: 10,
+    CLEAR_TIME: 3000,
+    CLOUD_FREQUENCY: 0.5,
+    GAMEOVER_CLEAR_TIME: 750,
+    GAP_COEFFICIENT: 0.6,
+    GRAVITY: 0.6,
+    INITIAL_JUMP_VELOCITY: 12,
+    INVERT_FADE_DURATION: 12000,
+    INVERT_DISTANCE: 700,
+    MAX_BLINK_COUNT: 3,
+    MAX_CLOUDS: 6,
+    MAX_OBSTACLE_LENGTH: 3,
+    MAX_OBSTACLE_DUPLICATION: 2,
+    MAX_SPEED: 20,
+    MIN_JUMP_HEIGHT: 35,
+    MOBILE_SPEED_COEFFICIENT: 1.2,
+    RESOURCE_TEMPLATE_ID: 'audio-resources',
+    SPEED: parseInt(document.querySelector('.wp-block-blockasaurus-blockasaurus').getAttribute('data-speed')),
+    SPEED_DROP_COEFFICIENT: 3,
+    MUTE_AUDIO: document.querySelector('.wp-block-blockasaurus-blockasaurus').getAttribute('data-mute-audio') == 'true'
+  };
+  new Runner('.interstitial-wrapper', runnerConfig);
 }
 
 document.addEventListener('DOMContentLoaded', onDocumentLoad);

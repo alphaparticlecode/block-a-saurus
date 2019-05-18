@@ -70,9 +70,9 @@ registerBlockType( 'blockasaurus/blockasaurus', {
 			</Fragment>
 		);
 	},
-	save() {
+	save( props ) {
 		return (
-			<div>
+			<div data-speed={props.attributes[ 'dinoSpeed' ]} data-mute-audio={props.attributes[ 'muteAudio' ]}>
 				<div id="messageBox" class="sendmessage">
 			         <h1 style="text-align: center;font-family: 'Open Sans', sans-serif;">Click to Play</h1>
 			         <div class="niokbutton" onclick="okbuttonsend()"></div>

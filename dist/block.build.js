@@ -134,8 +134,11 @@ registerBlockType('blockasaurus/blockasaurus', {
       }
     }))));
   },
-  save: function save() {
-    return wp.element.createElement("div", null, wp.element.createElement("div", {
+  save: function save(props) {
+    return wp.element.createElement("div", {
+      "data-speed": props.attributes['dinoSpeed'],
+      "data-mute-audio": props.attributes['muteAudio']
+    }, wp.element.createElement("div", {
       id: "messageBox",
       "class": "sendmessage"
     }, wp.element.createElement("h1", {
