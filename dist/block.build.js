@@ -69,6 +69,9 @@
 
 var __ = wp.i18n.__;
 var registerBlockType = wp.blocks.registerBlockType;
+var InspectorControls = wp.editor.InspectorControls;
+var RangeControl = wp.components.RangeControl;
+var Fragment = wp.element.Fragment;
 
 function Icon() {
   return wp.element.createElement("svg", {
@@ -90,11 +93,28 @@ registerBlockType('blockasaurus/blockasaurus', {
   title: __('Block-a-saurus!'),
   icon: wp.element.createElement(Icon, null),
   category: 'common',
-  edit: function edit() {
-    return wp.element.createElement("img", {
+  attributes: {
+    dinoSpeed: {
+      type: 'number',
+      default: 5
+    }
+  },
+  edit: function edit(props) {
+    var setAttributes = props.setAttributes;
+    return wp.element.createElement(Fragment, null, wp.element.createElement("img", {
       src: "/wp-content/plugins/block-a-saurus/src/img/dino-cover.png",
       alt: ""
-    });
+    }), wp.element.createElement(InspectorControls, null, wp.element.createElement(RangeControl, {
+      label: "Dino Speed",
+      value: props.attributes['dinoSpeed'],
+      onChange: function onChange(speed) {
+        var attributes = {};
+        attributes['dinoSpeed'] = speed;
+        setAttributes(attributes);
+      },
+      min: 5,
+      max: 15
+    })));
   },
   save: function save() {
     return wp.element.createElement("div", null, wp.element.createElement("div", {

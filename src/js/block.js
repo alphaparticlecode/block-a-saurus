@@ -1,5 +1,8 @@
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
+const { InspectorControls } = wp.editor;
+const { RangeControl } = wp.components;
+const { Fragment } = wp.element;
 
 function Icon () {
     return (
@@ -14,9 +17,35 @@ registerBlockType( 'blockasaurus/blockasaurus', {
 	title: __( 'Block-a-saurus!' ),
 	icon: <Icon />,
 	category: 'common',
-	edit() {
+	attributes: {
+		dinoSpeed: {
+			type: 'number',
+			default: 5
+		}
+	},
+	edit( props ) {
+		const {
+			setAttributes
+		} = props;
+
 		return (
-			<img src="/wp-content/plugins/block-a-saurus/src/img/dino-cover.png" alt="" />
+			<Fragment>
+				<img src="/wp-content/plugins/block-a-saurus/src/img/dino-cover.png" alt="" />
+
+				<InspectorControls>
+					<RangeControl
+				        label="Dino Speed"
+				        value={ props.attributes[ 'dinoSpeed' ] }
+						onChange={ (speed) => {
+							const attributes = {};
+							attributes[ 'dinoSpeed' ] = speed;
+							setAttributes( attributes );
+						} }
+				        min={ 5 }
+				        max={ 15 }
+				    />
+				</InspectorControls>
+			</Fragment>
 		);
 	},
 	save() {
