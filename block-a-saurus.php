@@ -33,7 +33,8 @@ function bas_editor_assets() {
 		'bas-basic-script', // Handle.
 		plugins_url( 'dist/block.build.js', __FILE__ ),
 		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', 'wp-components' ),
-		filemtime( plugin_dir_path( __FILE__ ) . 'src/js/block.js' )
+		filemtime( plugin_dir_path( __FILE__ ) . 'src/js/block.js' ),
+		true
 	);
 
 	// Styles.
@@ -66,7 +67,8 @@ function bas_frontend_assets() {
 			'bas-dino-frontend', // Handle.
 			plugins_url( 'dist/dino.build.js', __FILE__ ),
 			array( 'jquery' ),
-			filemtime( plugin_dir_path( __FILE__ ) . 'dist/dino.build.js' )
+			filemtime( plugin_dir_path( __FILE__ ) . 'dist/dino.build.js' ),
+			true
 		);
 	}
 }
