@@ -737,9 +737,7 @@
                 // Check that enough time has elapsed before allowing jump key to restart.
                 var deltaTime = getTimeStamp() - this.time;
 
-                if (Runner.keycodes.RESTART[keyCode] || this.isLeftClickOnCanvas(e) ||
-                    (deltaTime >= this.config.GAMEOVER_CLEAR_TIME &&
-                        Runner.keycodes.JUMP[keyCode])) {
+                if (Runner.keycodes.RESTART[keyCode] || this.isLeftClickOnCanvas(e) ) {
                     this.restart();
                 }
             } else if (this.paused && isjumpKey) {
