@@ -70,7 +70,9 @@
 var __ = wp.i18n.__;
 var registerBlockType = wp.blocks.registerBlockType;
 var InspectorControls = wp.editor.InspectorControls;
-var RangeControl = wp.components.RangeControl;
+var _wp$components = wp.components,
+    RangeControl = _wp$components.RangeControl,
+    PanelBody = _wp$components.PanelBody;
 var Fragment = wp.element.Fragment;
 
 function Icon() {
@@ -104,7 +106,9 @@ registerBlockType('blockasaurus/blockasaurus', {
     return wp.element.createElement(Fragment, null, wp.element.createElement("img", {
       src: "/wp-content/plugins/block-a-saurus/src/img/dino-cover.png",
       alt: ""
-    }), wp.element.createElement(InspectorControls, null, wp.element.createElement(RangeControl, {
+    }), wp.element.createElement(InspectorControls, null, wp.element.createElement(PanelBody, {
+      title: __('Game Settings')
+    }, wp.element.createElement(RangeControl, {
       label: "Dino Speed",
       value: props.attributes['dinoSpeed'],
       onChange: function onChange(speed) {
@@ -114,7 +118,7 @@ registerBlockType('blockasaurus/blockasaurus', {
       },
       min: 5,
       max: 15
-    })));
+    }))));
   },
   save: function save() {
     return wp.element.createElement("div", null, wp.element.createElement("div", {

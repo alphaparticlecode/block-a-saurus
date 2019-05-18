@@ -1,7 +1,10 @@
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { InspectorControls } = wp.editor;
-const { RangeControl } = wp.components;
+const { 
+	RangeControl,
+	PanelBody
+} = wp.components;
 const { Fragment } = wp.element;
 
 function Icon () {
@@ -33,17 +36,21 @@ registerBlockType( 'blockasaurus/blockasaurus', {
 				<img src="/wp-content/plugins/block-a-saurus/src/img/dino-cover.png" alt="" />
 
 				<InspectorControls>
-					<RangeControl
-				        label="Dino Speed"
-				        value={ props.attributes[ 'dinoSpeed' ] }
-						onChange={ (speed) => {
-							const attributes = {};
-							attributes[ 'dinoSpeed' ] = speed;
-							setAttributes( attributes );
-						} }
-				        min={ 5 }
-				        max={ 15 }
-				    />
+					<PanelBody
+        				title={ __( 'Game Settings' ) }
+    				>
+						<RangeControl
+					        label="Dino Speed"
+					        value={ props.attributes[ 'dinoSpeed' ] }
+							onChange={ (speed) => {
+								const attributes = {};
+								attributes[ 'dinoSpeed' ] = speed;
+								setAttributes( attributes );
+							} }
+					        min={ 5 }
+					        max={ 15 }
+					    />
+    				</PanelBody>
 				</InspectorControls>
 			</Fragment>
 		);
