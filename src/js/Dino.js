@@ -670,8 +670,7 @@
             }
 
             if (e.target != this.detailsButton) {
-                if (!this.crashed && (Runner.keycodes.JUMP[e.keyCode] ||
-                    e.type == Runner.events.TOUCHSTART || e.type == Runner.events.MOUSEDOWN)) {
+                if (!this.crashed && (e.type == Runner.events.TOUCHSTART || e.type == Runner.events.MOUSEDOWN)) {
                     if (!this.playing) {
                         document.querySelector('#messageBox').style.visibility = 'hidden';
 
@@ -706,6 +705,15 @@
                     // Duck.
                     this.tRex.setDuck(true);
                 }
+            }
+
+            if( this.playing && !this.crashed && Runner.keycodes.JUMP[e.keyCode] && !this.tRex.jumping ) {
+                this.playSound(this.soundFx.BUTTON_PRESS);
+                this.tRex.startJump(this.currentSpeed);
+            }
+
+            if( this.playing ) {
+                e.preventDefault();
             }
         },
 
