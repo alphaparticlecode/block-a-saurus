@@ -51,18 +51,22 @@ function bas_editor_assets() {
  * @since 1.0.0
  */
 function bas_frontend_assets() {
-	// Styles.
-	wp_enqueue_style(
-		'bas-basic-frontend', // Handle.
-		plugins_url( 'src/css/style.css', __FILE__ ),
-		array(),
-		filemtime( plugin_dir_path( __FILE__ ) . 'src/css/style.css' )
-	);
+	$id = get_the_id();
 
-	wp_enqueue_script(
-		'bas-dino-frontend', // Handle.
-		plugins_url( 'dist/dino.build.js', __FILE__ ),
-		array( 'jquery' ),
-		filemtime( plugin_dir_path( __FILE__ ) . 'dist/dino.build.js' )
-	);
+	if ( has_block( 'blockasaurus/blockasaurus', $id ) ) {
+		// Styles.
+		wp_enqueue_style(
+			'bas-basic-frontend', // Handle.
+			plugins_url( 'src/css/style.css', __FILE__ ),
+			array(),
+			filemtime( plugin_dir_path( __FILE__ ) . 'src/css/style.css' )
+		);
+
+		wp_enqueue_script(
+			'bas-dino-frontend', // Handle.
+			plugins_url( 'dist/dino.build.js', __FILE__ ),
+			array( 'jquery' ),
+			filemtime( plugin_dir_path( __FILE__ ) . 'dist/dino.build.js' )
+		);
+	}
 }
