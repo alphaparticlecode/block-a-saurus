@@ -3,7 +3,8 @@ const { registerBlockType } = wp.blocks;
 const { InspectorControls } = wp.editor;
 const { 
 	RangeControl,
-	PanelBody
+	PanelBody,
+	ToggleControl
 } = wp.components;
 const { Fragment } = wp.element;
 
@@ -24,6 +25,10 @@ registerBlockType( 'blockasaurus/blockasaurus', {
 		dinoSpeed: {
 			type: 'number',
 			default: 5
+		},
+		muteAudio: {
+			type: 'boolean',
+			default: false
 		}
 	},
 	edit( props ) {
@@ -49,6 +54,16 @@ registerBlockType( 'blockasaurus/blockasaurus', {
 							} }
 					        min={ 5 }
 					        max={ 15 }
+					    />
+					    <ToggleControl
+					        label="Mute Audio?"
+					        help={ props.attributes[ 'muteAudio' ] ? 'Audio muted.' : 'Audio enabled.' }
+					        checked={ props.attributes[ 'muteAudio' ] }
+					        onChange={ (toggle) => {
+								const attributes = {};
+								attributes[ 'muteAudio' ] = toggle;
+								setAttributes( attributes );
+							} }
 					    />
     				</PanelBody>
 				</InspectorControls>

@@ -72,7 +72,8 @@ var registerBlockType = wp.blocks.registerBlockType;
 var InspectorControls = wp.editor.InspectorControls;
 var _wp$components = wp.components,
     RangeControl = _wp$components.RangeControl,
-    PanelBody = _wp$components.PanelBody;
+    PanelBody = _wp$components.PanelBody,
+    ToggleControl = _wp$components.ToggleControl;
 var Fragment = wp.element.Fragment;
 
 function Icon() {
@@ -99,6 +100,10 @@ registerBlockType('blockasaurus/blockasaurus', {
     dinoSpeed: {
       type: 'number',
       default: 5
+    },
+    muteAudio: {
+      type: 'boolean',
+      default: false
     }
   },
   edit: function edit(props) {
@@ -118,6 +123,15 @@ registerBlockType('blockasaurus/blockasaurus', {
       },
       min: 5,
       max: 15
+    }), wp.element.createElement(ToggleControl, {
+      label: "Mute Audio?",
+      help: props.attributes['muteAudio'] ? 'Audio muted.' : 'Audio enabled.',
+      checked: props.attributes['muteAudio'],
+      onChange: function onChange(toggle) {
+        var attributes = {};
+        attributes['muteAudio'] = toggle;
+        setAttributes(attributes);
+      }
     }))));
   },
   save: function save() {
