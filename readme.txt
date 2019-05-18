@@ -33,7 +33,6 @@ Right now, high scores are only saved until you close the tab that you are playi
 3. A Block-a-saurus game in progress!
 
 == Changelog ==
-== Changelog ==
  
 = 1.0 =
 * Initial plugin general release
