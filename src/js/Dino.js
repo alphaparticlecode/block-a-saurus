@@ -659,6 +659,14 @@
             }
         },
 
+        messageBoxClicked: function(e) {
+            if( 'messageBox' === e.target.getAttribute('id') || 'messageBox' === e.target.parentElement.getAttribute('id') ) {
+                return true;
+            }
+
+            return false;
+        },
+
         /**
          * Process keydown.
          * @param {Event} e
@@ -670,7 +678,9 @@
             }
 
             if (e.target != this.detailsButton) {
-                if (!this.crashed && (e.type == Runner.events.TOUCHSTART || e.type == Runner.events.MOUSEDOWN)) {
+                console.log(e.target);
+                console.log(this.isLeftClickOnCanvas(e));
+                if (!this.crashed && (e.type == Runner.events.TOUCHSTART || (e.type == Runner.events.MOUSEDOWN && this.messageBoxClicked(e) ))) {
                     if (!this.playing) {
                         document.querySelector('#messageBox').style.visibility = 'hidden';
                         if( ! this.config.MUTE_AUDIO ) {
