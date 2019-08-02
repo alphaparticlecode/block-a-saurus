@@ -10,7 +10,7 @@ module.exports = {
     	path: __dirname + '/dist'
   	},
 	module: {
-		loaders: [
+		rules: [
 			{
 				test: /.js$/,
 				loader: 'babel-loader',
