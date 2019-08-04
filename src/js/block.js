@@ -73,15 +73,15 @@ registerBlockType( 'blockasaurus/blockasaurus', {
 	save( props ) {
 		return (
 			<div data-speed={props.attributes[ 'dinoSpeed' ]} data-mute-audio={props.attributes[ 'muteAudio' ]}>
-				<div id="bks-messageBox" class="sendmessage">
+				<div id="bas-messageBox" class="sendmessage">
 			         <h1 style="text-align: center;font-family: 'Open Sans', sans-serif;">Click to Play</h1>
 			         <div class="niokbutton" onclick="okbuttonsend()"></div>
 			    </div>
-			    <div id="main-frame-error" class="bks-interstitial-wrapper">
+			    <div id="main-frame-error" class="bas-interstitial-wrapper">
 			        <div id="main-content">
-			            <div class="bks-icon bks-icon-offline" alt=""></div>
+			            <div class="bas-icon bas-icon-offline" alt=""></div>
 			        </div>
-			        <div id="bks-offline-resources">
+			        <div id="bas-offline-resources">
 			            <img id="offline-resources-1x" src="/wp-content/plugins/block-a-saurus/src/img/default_100_percent/100-offline-sprite.png" />
 			            <img id="offline-resources-2x" src="/wp-content/plugins/block-a-saurus/src/img/default_200_percent/200-offline-sprite.png" />
 			            <template id="audio-resources">

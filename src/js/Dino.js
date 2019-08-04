@@ -142,14 +142,14 @@
      * @enum {string}
      */
     Runner.classes = {
-        CANVAS: 'bks-runner-canvas',
-        CONTAINER: 'bks-runner-container',
+        CANVAS: 'bas-runner-canvas',
+        CONTAINER: 'bas-runner-container',
         CRASHED: 'crashed',
-        ICON: 'bks-icon-offline',
+        ICON: 'bas-icon-offline',
         INVERTED: 'inverted',
         SNACKBAR: 'snackbar',
         SNACKBAR_SHOW: 'snackbar-show',
-        TOUCH_CONTROLLER: 'bks-controller'
+        TOUCH_CONTROLLER: 'bas-controller'
     };
 
 
@@ -660,7 +660,7 @@
         },
 
         messageBoxClicked: function(e) {
-            if( 'bks-messageBox' === e.target.getAttribute('id') || 'bks-messageBox' === e.target.parentElement.getAttribute('id') ) {
+            if( 'bas-messageBox' === e.target.getAttribute('id') || 'bas-messageBox' === e.target.parentElement.getAttribute('id') ) {
                 return true;
             }
 
@@ -680,7 +680,7 @@
             if (e.target != this.detailsButton) {
                 if (!this.crashed && (e.type == Runner.events.TOUCHSTART || (e.type == Runner.events.MOUSEDOWN && this.messageBoxClicked(e) ))) {
                     if (!this.playing) {
-                        document.querySelector('#bks-messageBox').style.visibility = 'hidden';
+                        document.querySelector('#bas-messageBox').style.visibility = 'hidden';
                         if( ! this.config.MUTE_AUDIO ) {
                             this.loadSounds();
                         }
@@ -2753,7 +2753,7 @@ function onDocumentLoad() {
         MUTE_AUDIO: document.querySelector('.wp-block-blockasaurus-blockasaurus').getAttribute('data-mute-audio') == 'true'
     }
 
-    new Runner('.bks-interstitial-wrapper', runnerConfig);
+    new Runner('.bas-interstitial-wrapper', runnerConfig);
 }
 
 document.addEventListener('DOMContentLoaded', onDocumentLoad);
