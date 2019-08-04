@@ -37,6 +37,14 @@ function bas_editor_assets() {
 		true
 	);
 
+	wp_localize_script(
+		'bas-basic-script',
+		'bas_data',
+		array(
+			'cover_image_url' => plugins_url( 'src/img/dino-cover.png', __FILE__ )
+		)
+	);
+
 	// Styles.
 	wp_enqueue_style(
 		'bas-basic-styles', // Handle.

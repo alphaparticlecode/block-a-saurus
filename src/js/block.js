@@ -38,7 +38,7 @@ registerBlockType( 'blockasaurus/blockasaurus', {
 
 		return (
 			<Fragment>
-				<img src="/wp-content/plugins/block-a-saurus/src/img/dino-cover.png" alt="" />
+				<img src={bas_data.cover_image_url} alt="" />
 
 				<InspectorControls>
 					<PanelBody
