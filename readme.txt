@@ -33,6 +33,10 @@ Right now, high scores are only saved until you close the tab that you are playi
 3. A Block-a-saurus game in progress!
 
 == Changelog ==
- 
+= 1.0.1 =
+* Fixing incompatibility with Jetpack lazy loading images (c88013)
+* Security updates to Javascript packages
+* Bumping Tested with version
+
 = 1.0 =
 * Initial plugin general release
