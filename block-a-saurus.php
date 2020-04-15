@@ -6,7 +6,7 @@
  * Plugin Name: Block-a-saurus
  * Plugin URI:  https://alphaparticle.com/blockasaurus
  * Description: A Gutenberg block that lets users play the T-rex game from Chrome right within a post!
- * Version:     1.0
+ * Version:     1.0.1
  * Author:      Alpha Particle
  * Author URI:  https://alphaparticle.com/
  * Text Domain: blockasaurus
