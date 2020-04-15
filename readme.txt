@@ -40,3 +40,7 @@ Right now, high scores are only saved until you close the tab that you are playi
 
 = 1.0 =
 * Initial plugin general release
+
+== Upgrade Notice ==
+= 1.0.1 =
+Fixed Jetpack lazy load issue. If you are using Jetpack, remove and then re-add any Block-a-saurus blocks.
