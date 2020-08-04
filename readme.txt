@@ -34,8 +34,7 @@ Right now, high scores are only saved until you close the tab that you are playi
 
 == Changelog ==
 = 1.0.2 =
-* Adding Block Directory info so Block-a-saurus can be installed directly from Gutenberg ()
-* Adding "game" tag for better discovereability in plugin repo ()
+* Adding "game" tag for better discovereability in plugin repo (24b3228)
 * Fix loading issues with assets when WordPress is running in a sub-folder ()
 * Fixing AudioContext error in Safari ()
 * Security updates to Javascript packages
