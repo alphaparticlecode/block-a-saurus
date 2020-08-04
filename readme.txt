@@ -2,7 +2,7 @@
 Contributors: kkoppenhaver
 Tags: trex, game, block, gutenberg, blockasaurus
 Requires at least: 5.0.0
-Tested up to: 5.2
+Tested up to: 5.5
 Requires PHP: 5.6
 Stable tag: 1.0.1
 License: GPL2+
@@ -33,6 +33,14 @@ Right now, high scores are only saved until you close the tab that you are playi
 3. A Block-a-saurus game in progress!
 
 == Changelog ==
+= 1.0.2 =
+* Adding Block Directory info so Block-a-saurus can be installed directly from Gutenberg ()
+* Adding "game" tag for better discovereability in plugin repo ()
+* Fix loading issues with assets when WordPress is running in a sub-folder ()
+* Fixing AudioContext error in Safari ()
+* Security updates to Javascript packages
+* Bumping Tested with version to 5.5
+
 = 1.0.1 =
 * Fixing incompatibility with Jetpack lazy loading images (c88013)
 * Security updates to Javascript packages
