@@ -1,6 +1,6 @@
 === Block-a-saurus ===
 Contributors: kkoppenhaver
-Tags: trex, game, block, gutenberg, blockasaurus
+Tags: trex, game, games, block, gutenberg, blockasaurus
 Requires at least: 5.0.0
 Tested up to: 5.5
 Requires PHP: 5.6
